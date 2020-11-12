@@ -21,7 +21,13 @@ Hash-table: Unique data representation, Implementation of caches, Array associat
 A **linked list** is a linear collection of data elements whose order is not given by their physical placement in memory. Instead, each element points to the next. It is a data structure consisting of a collection of nodes which together represent a sequence.
 
 # Array vs Linked List:
-
+- Array's elements can be accessed in **constant time** wheras accessing elements of Linked-List takes **linear time**.
+- Array's element can be accessed **using index** and elements of Linked-List need to be accessed **one by one** from the beginning.
+- Operations like **INSERTION** and **DELETEATION** takes longer time on **Array** where it takes constant time using **Linked-List**.
+- Arrays are **Fixed in size**. In contrast, Linked-List is dynamically sized and fexible.
+- In Array memory is allocated in **compile time**. In case of Linked-List memory is allocated during the **execution on runtime**. 
+- Array stores data **consecutively** and Linked-List stores data **Randomly**. 
+- Array takes **less memory** than Linked-Lists because Linked-Lists use extra memory for pointers pointing the previous or next elements. 
 
 # Stack:
 A **stack** is an abstract data type that serves as a collection of elements, with two main principal operations: **PUSH**, which adds an element to the collection, and **POP**, which removes the most recently added element that was not yet removed.
