@@ -36,9 +36,13 @@ A **stack** is an abstract data type that serves as a collection of elements, wi
 A **queue** is a collection of entities that are maintained in a sequence and can be modified by the addition of entities at one end of the sequence(**PUSH**) and the removal of entities from the other end of the sequence(**POP**).
 
 # Graph:
+A Graph consists of a finite set of vertices(or nodes) and set of Edges which connect a pair of nodes.
 
 # Complexity:
+Complexity of an algorithm is the amount of resources required to run it. Particularly it focuses on time and memory requirements.
 
 # Time-Space Tradeoff:
+A Time-Space Tradeoff is a way of solving a problem or calculation in less time by using more storage space (or memory), or by solving a problem in very little space by spending a long time.
 
 # Algorithm:
+An algorithm is a finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation.
