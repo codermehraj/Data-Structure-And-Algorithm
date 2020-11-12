@@ -14,10 +14,10 @@ Data structures can be linear or non-linear, based on the way their data is acce
 Hash-table: Unique data representation, Implementation of caches, Array association, Locating entries in a table, Representation of objects, Database indexing.
 - **File**: Implementation of computer programs, Data comparison, Storage of data having varying data types.
 
-# Array:
+## Array:
 **Array** is a list of some same types of elements each identified by at least one array index or key.
 
-# Linked List:
+## Linked List:
 A **linked list** is a linear collection of data elements whose order is not given by their physical placement in memory. Instead, each element points to the next. It is a data structure consisting of a collection of nodes which together represent a sequence.
 
 # Array vs Linked List:
@@ -29,20 +29,20 @@ A **linked list** is a linear collection of data elements whose order is not giv
 - Array stores data **consecutively** and Linked-List stores data **Randomly**. 
 - Array takes **less memory** than Linked-Lists because Linked-Lists use extra memory for pointers pointing the previous or next elements. 
 
-# Stack:
+## Stack:
 A **stack** is an abstract data type that serves as a collection of elements, with two main principal operations: **PUSH**, which adds an element to the collection, and **POP**, which removes the most recently added element that was not yet removed.
 
-# Queue:
+## Queue:
 A **queue** is a collection of entities that are maintained in a sequence and can be modified by the addition of entities at one end of the sequence(**PUSH**) and the removal of entities from the other end of the sequence(**POP**).
 
-# Graph:
+## Graph:
 A Graph consists of a finite set of vertices(or nodes) and set of Edges which connect a pair of nodes.
 
-# Complexity:
+## Complexity:
 Complexity of an algorithm is the amount of resources required to run it. Particularly it focuses on time and memory requirements.
 
-# Time-Space Tradeoff:
+## Time-Space Tradeoff:
 A Time-Space Tradeoff is a way of solving a problem or calculation in less time by using more storage space (or memory), or by solving a problem in very little space by spending a long time.
 
-# Algorithm:
+## Algorithm:
 An algorithm is a finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation.
