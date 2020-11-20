@@ -10,6 +10,8 @@
         | 1. push() function                                            |
         | 2. pop() function                                             |
         -----------------------------------------------------------------
+        As C Structure dont allow member functions thats why I used ".cpp" file format to code this.
+        But I used all the C syntax
 */
 
 #include <stdio.h>
