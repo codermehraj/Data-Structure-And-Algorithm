@@ -153,7 +153,7 @@ int main()
     printf("\n\n\tWelcome to the POSTFIX EXPRESSION EVALUATION program\n");
     printf("\n\tEnter your postfix expression separated by commas','\n\n\t");
     printf("For example : \" 12, 9, 17, +, *, 57, -, 3, * \"\n\t");
-    printf("Which means you have to put a comma(,)\n\tright after the number you have entered\n\n");
+    printf("Which means you have to put a comma(,)\n\tright after every number you have entered\n\n");
 
     // taking the expression
     printf("\tEnter the expression : \n\t>>> ");
