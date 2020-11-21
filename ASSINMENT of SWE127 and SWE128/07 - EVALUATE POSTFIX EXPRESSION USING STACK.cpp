@@ -136,7 +136,7 @@ int evaluate_postfix_expression(char given_expression[])
             for (k = 1; k <= num1; k++)
                 anss *= num2;
             printf("%d %c %d = %d\t[after two pops then one push]\n", num2, given_expression[i], num1, anss);
-            st.PUSH(num1 + num2);
+            st.PUSH(anss);
         }
     }
 
