@@ -28,7 +28,7 @@ struct STACK
     {
         if (cur_size == MAX_SIZ)
             return -1;
-        strcpy(value[cur_size++],num);
+        strcpy(value[cur_size++], num);
         return cur_size;
     }
 
@@ -53,7 +53,7 @@ struct STACK
     }
 };
 
-char precedence[] = {'+', '-', '*', '/', '^' };
+char precedence[] = {'+', '-', '*', '/', '^'};
 
 int LENGTH(char str[])
 {
@@ -71,86 +71,109 @@ void CONCATENATE(char start_string[], char end_string[])
     start_string[len1 + len2] = '\0';
 }
 
-
-void remove_all_space(char a[]){
+void remove_all_space(char a[])
+{
     char temp[MAX_SIZE];
-    int i, j=0;
-    for(i = 0; a[i] != '\0' ; i++){
-        if(a[i] != ' ') temp[j++] = a[i];
+    int i, j = 0;
+    for (i = 0; a[i] != '\0'; i++)
+    {
+        if (a[i] != ' ')
+            temp[j++] = a[i];
     }
     temp[j] = '\0';
-    for(i = 0;i<j;i++){
+    for (i = 0; i < j; i++)
+    {
         a[i] = temp[i];
     }
     a[j++] = ')';
     a[j] = '\0';
 }
 
-void TRANSFORM_INFIX_TO_POSTFIX(char infix[], char postfix[]){
+void TRANSFORM_INFIX_TO_POSTFIX(char infix[], char postfix[])
+{
     remove_all_space(infix);
     //puts(infix);
 
-    int i, tempSize = 0, postfixSize=0;
+    int i, tempSize = 0, postfixSize = 0;
     char temp[1000];
     struct STACK st;
     st.PUSH("(");
-    for(i = 0; infix[i] != '\0' ; i++){
-        if(infix[i] == '('){
+    for (i = 0; infix[i] != '\0'; i++)
+    {
+        if (infix[i] == '(')
+        {
             st.PUSH("(");
         }
-        else if(infix[i] == ')'){
-            while(1){
-                *temp = *st.value[st.cur_size-1];
+        else if (infix[i] == ')')
+        {
+            while (1)
+            {
+                *temp = *st.value[st.cur_size - 1];
                 st.POP();
-                if(temp[0] == '(') break;
-                CONCATENATE(postfix," ");
-                CONCATENATE(postfix,temp);
-                CONCATENATE(postfix," ");
+                if (temp[0] == '(')
+                    break;
+                CONCATENATE(postfix, " ");
+                CONCATENATE(postfix, temp);
+                CONCATENATE(postfix, " ");
             }
         }
-        else if(infix[i] == '^' ){
-            while(1){
-                *temp = *st.value[st.cur_size-1];
-                if(temp[0] != '^') break;
+        else if (infix[i] == '^')
+        {
+            while (1)
+            {
+                *temp = *st.value[st.cur_size - 1];
+                if (temp[0] != '^')
+                    break;
                 st.POP();
-                CONCATENATE(postfix," ");
-                CONCATENATE(postfix,temp);
-                CONCATENATE(postfix," ");
+                CONCATENATE(postfix, " ");
+                CONCATENATE(postfix, temp);
+                CONCATENATE(postfix, " ");
             }
-            CONCATENATE(postfix," ");
+            CONCATENATE(postfix, " ");
             st.PUSH("^");
         }
-        else if(infix[i] == '*' || infix[i] == '/'){
-            while(1){
-                *temp = *st.value[st.cur_size-1];
-                if(temp[0] == '(' || temp[0] == '+' || temp[0] == '-') break;
+        else if (infix[i] == '*' || infix[i] == '/')
+        {
+            while (1)
+            {
+                *temp = *st.value[st.cur_size - 1];
+                if (temp[0] == '(' || temp[0] == '+' || temp[0] == '-')
+                    break;
                 st.POP();
-                CONCATENATE(postfix," ");
-                CONCATENATE(postfix,temp);
-                CONCATENATE(postfix," ");
+                CONCATENATE(postfix, " ");
+                CONCATENATE(postfix, temp);
+                CONCATENATE(postfix, " ");
             }
-            CONCATENATE(postfix," ");
-            if(infix[i] == '*') st.PUSH("*");
-            else st.PUSH("/");
+            CONCATENATE(postfix, " ");
+            if (infix[i] == '*')
+                st.PUSH("*");
+            else
+                st.PUSH("/");
         }
-        else if(infix[i] == '+' || infix[i] == '-'){
-             while(1){
-                *temp = *st.value[st.cur_size-1];
-                if(temp[0] == '(' ) break;
+        else if (infix[i] == '+' || infix[i] == '-')
+        {
+            while (1)
+            {
+                *temp = *st.value[st.cur_size - 1];
+                if (temp[0] == '(')
+                    break;
                 st.POP();
-                CONCATENATE(postfix," ");
-                CONCATENATE(postfix,temp);
-                CONCATENATE(postfix," ");
+                CONCATENATE(postfix, " ");
+                CONCATENATE(postfix, temp);
+                CONCATENATE(postfix, " ");
             }
-            CONCATENATE(postfix," ");
-            if(infix[i] == '+') st.PUSH("+");
-            else st.PUSH("-");
+            CONCATENATE(postfix, " ");
+            if (infix[i] == '+')
+                st.PUSH("+");
+            else
+                st.PUSH("-");
         }
-        else {
+        else
+        {
             // push number
             temp[0] = infix[i];
             temp[1] = '\0';
-            CONCATENATE(postfix,temp);
+            CONCATENATE(postfix, temp);
         }
     }
 }
@@ -173,9 +196,10 @@ int main()
     // calculating the ans
     TRANSFORM_INFIX_TO_POSTFIX(infix, postfix);
 
-    printf("\tPOSTFIX :\n\t%s\n",postfix);
+    printf("\tPOSTFIX :\n\t%s\n", postfix);
 
-	return 0;
+    return 0;
 }
 
 // ( 12 + 3 ) / 3 * 5 + 2 ^ 2
+// ( A + B ) / C * D + E ^ E
